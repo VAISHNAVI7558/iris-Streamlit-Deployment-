@@ -19,4 +19,4 @@ def predict_species(model : Pipeline,
     pred = model.predict(x_new)
     prob = model.predict_proba(x_new)
     probs = pd.DataFrame(prob , columns=model.classes_)
-    return pred , probs
+    return pred[0] , probs
