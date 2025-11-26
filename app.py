@@ -29,8 +29,7 @@ petal_wid = st.number_input("petal_widht" , min_value= 0.00)
 predict = st.button("Predition" , type = 'primary')
 
 if predict:
-    pred = predict_species(model , sep_len , sep_wid , petal_len , petal_wid)
-
-st.subheader(pred)
-probs  =  st.dataframe(pred)
-st.subheader(probs)
+    pred , prob= predict_species(model , sep_len , sep_wid , petal_len , petal_wid)
+    st.subheader(pred)
+    probs  =  st.dataframe(prob)
+    st.subheader(probs)
